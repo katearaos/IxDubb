@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>IxDubb — Doblaje y localización con IA + humanos</title>
+  <meta name="description" content="IxDubb: estudio boutique de doblaje y localización con IA + dirección humana. Español neutro, lip‑sync acertado y calidad broadcast." />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon-32x32.png" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&family=Cooperata+Display&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#FEF8F3;
+      --ink:#7D5266;
+      --primary:#DC7D61;
+      --accent:#A8623C;
+      --secondary:#754f77;
+      --line:#e4dcd6;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:Montserrat,Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:1100px;margin-inline:auto;padding:24px}
+    header{position:sticky;top:0;background:linear-gradient(180deg,#fef8f3ee,#fef8f388 80%,#fef8f300);backdrop-filter:saturate(140%) blur(6px);z-index:10;border-bottom:1px solid var(--line)}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo img{height:48px;display:block}
+    nav{display:flex;gap:18px;align-items:center}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 18px;border-radius:14px;font-weight:600;border:1px solid transparent;transition:transform .08s ease, box-shadow .18s ease}
+    .btn:hover{transform:translateY(-1px);box-shadow:0 10px 22px rgba(125,82,102,.22)}
+    .btn.primary{background:var(--primary);color:#fff}
+    .btn.ghost{border-color:var(--line);background:#ffffff90}
+    .btn.lang{padding:8px 12px;border-radius:10px;border:1px solid var(--line);font-weight:600}
+    .hero{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:center;padding:48px 0}
+    .hero h1{font-size:clamp(30px,4.3vw,52px);line-height:1.03;margin:0 0 14px;font-family:'Cooperata Display', serif}
+    .kicker{color:var(--secondary);font-weight:700;text-transform:uppercase;font-size:12px;letter-spacing:.14em;margin-bottom:8px}
+    .lede{font-size:clamp(16px,1.8vw,20px);color:#3a3750;opacity:.95}
+    .badges{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0}
+    .badge{font-size:12px;padding:6px 10px;border:1px solid var(--line);border-radius:999px;background:#fff}
+    .pattern{position:absolute;inset:-40px 0 auto 0;height:220px;pointer-events:none;opacity:.18}
+    .panel{position:relative;border:1px solid var(--line);border-radius:24px;padding:22px;background:#fff;box-shadow:0 10px 28px rgba(29,23,48,.06)}
+    .divider{height:1px;background:linear-gradient(90deg, #0000, var(--line), #0000);margin:36px 0}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{border:1px solid var(--line);background:#fff;border-radius:22px;padding:18px}
+    .card h3{margin:6px 0 6px;font-size:18px;color:var(--ink)}
+    .muted{color:#5b5670}
+    footer{padding:40px 0;color:#5b5670}
+    @media (max-width: 900px){
+      .hero{grid-template-columns:1fr}
+      nav{gap:10px}
+      .btn.lang{display:inline-flex}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container" style="display:flex;justify-content:space-between;align-items:center;gap:20px;">
+      <div class="brand">
+        <div class="logo"><img src="IxDubb Full.png" alt="IxDubb logo wordmark"></div>
+      </div>
+      <nav>
+        <a data-i18n="nav.services" href="#servicios">Servicios</a>
+        <a data-i18n="nav.process" href="#flujo">Flujo</a>
+        <a data-i18n="nav.samples" href="#muestras">Muestras</a>
+        <a data-i18n="nav.contact" href="#contacto" class="btn ghost">Contacto</a>
+        <a data-i18n="cta.demo" href="#demo" class="btn primary">Pide una demo</a>
+        <button id="langToggle" class="btn lang" aria-label="Cambiar idioma">EN</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <svg class="pattern" viewBox="0 0 1200 220" preserveAspectRatio="none" aria-hidden="true">
+        <defs>
+          <linearGradient id="g1" x1="0" x2="1">
+            <stop offset="0" stop-color="var(--primary)"/>
+            <stop offset="1" stop-color="var(--accent)"/>
+          </linearGradient>
+        </defs>
+        <path d="M0 120 C 80 40, 160 40, 240 120 S 400 200, 480 120 640 40, 720 120 880 200, 960 120 1120 40, 1200 120" stroke="url(#g1)" stroke-width="22" fill="none" stroke-linecap="round"/>
+      </svg>
+      <div>
+        <div class="kicker" data-i18n="hero.kicker">Doblaje + Localización</div>
+        <h1 data-i18n="hero.title">Voces que conectan.<br>Velocidad de IA.<br>Dirección humana.</h1>
+        <p class="lede" data-i18n="hero.lede">Estudio boutique para <strong>productoras, marcas y creadores</strong> que buscan doblaje al español (y otros idiomas) con <strong>lip‑sync cuidado</strong>, <strong>tono natural</strong> y <strong>entregas ágiles</strong>.</p>
+        <div class="badges">
+          <span class="badge" data-i18n="badges.sync">Lip‑sync preciso</span>
+          <span class="badge" data-i18n="badges.creative">Control creativo</span>
+          <span class="badge" data-i18n="badges.qc">QC humano</span>
+          <span class="badge" data-i18n="badges.audio">Entregables WAV</span>
+        </div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:8px">
+          <a class="btn primary" href="#contacto" data-i18n="cta.quote">Cotiza tu proyecto</a>
+          <a class="btn ghost" href="#muestras" data-i18n="cta.samples">Ver muestras</a>
+        </div>
+      </div>
+      <div class="panel">
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section id="servicios">
+      <h2 style="margin:0 0 12px;font-size:28px" data-i18n="sections.services">Servicios</h2>
+      <p class="muted" data-i18n="services.desc">Paquetes flexibles para productoras, marcas y creadores. Elige solo lo que necesitas.</p>
+      <div class="grid-3" style="margin-top:18px">
+        <div class="card">
+          <h3 data-i18n="services.adapt.h">Traducción y adaptación</h3>
+          <p class="muted" data-i18n="services.adapt.p">Localización al español neutro/latam con intención, referencias y <em>style‑guide</em>. Ajuste para lip‑sync cuando el proyecto lo requiera.</p>
+        </div>
+        <div class="card">
+          <h3 data-i18n="services.ai.h">Doblaje con IA dirigida</h3>
+          <p class="muted" data-i18n="services.ai.p">Voces neurales con dirección humana para dicción natural, emociones y consistencia de personaje. Opciones de clonación con permisos.</p>
+        </div>
+        <div class="card">
+          <h3 data-i18n="services.qc.h">QC humano + mezcla</h3>
+          <p class="muted" data-i18n="services.qc.p">Edición fina, limpieza, niveles broadcast y control de calidad por especialistas en audio.</p>
+        </div>
+        <div class="card">
+          <h3 data-i18n="services.subs.h">Subtitulaje y accesibilidad</h3>
+          <p class="muted" data-i18n="services.subs.p">Subtítulos con .srt / .vtt, closed captions y descripciones de audio según estándar.</p>
+        </div>
+        <div class="card">
+          <h3 data-i18n="services.rights.h">Gestión de derechos</h3>
+          <p class="muted" data-i18n="services.rights.p">Permisos de uso de voz y likeness, releases y documentación para usos comerciales y UGC.</p>
+        </div>
+        <div class="card">
+          <h3 data-i18n="services.delivery.h">Entrega y formatos</h3>
+          <p class="muted" data-i18n="services.delivery.p">WAV 48 kHz / 24‑bit, stems y AAF/OMF cuando aplique. <strong>No entregamos video</strong>.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section id="flujo">
+      <h2 style="margin:0 0 12px;font-size:28px" data-i18n="sections.process">Cómo trabajamos</h2>
+      <div class="grid-3" style="margin-top:12px">
+        <div class="card"><h3 data-i18n="process.1h">Brief y muestras</h3><p class="muted" data-i18n="process.1p">Recibimos material, tono y referencias. Enviamos voice tests cortos.</p></div>
+        <div class="card"><h3 data-i18n="process.2h">Adaptación</h3><p class="muted" data-i18n="process.2p">Traducción creativa con guía de pronunciación y ajustes de sync.</p></div>
+        <div class="card"><h3 data-i18n="process.3h">Grabación IA + dirección</h3><p class="muted" data-i18n="process.3p">Iteramos tomas con dirección humana y marcadores de sincronía.</p></div>
+        <div class="card"><h3 data-i18n="process.4h">Edición, mezcla y QC</h3><p class="muted" data-i18n="process.4p">Limpieza, mezcla, loudness y control de calidad final.</p></div>
+        <div class="card"><h3 data-i18n="process.5h">Entrega</h3><p class="muted" data-i18n="process.5p">WAV finales + stems y materiales por pista según alcance.</p></div>
+        <div class="card"><h3 data-i18n="process.6h">Opcionales</h3><p class="muted" data-i18n="process.6p">Subtítulos, multilenguaje y documentación de derechos.</p></div>
+      </div>
+      <div class="badges" style="margin-top:18px">
+        <span class="badge" data-i18n="meta.billing">Facturación en MXN o USD</span>
+        <span class="badge" data-i18n="meta.nda">NDAs disponibles</span>
+        <span class="badge" data-i18n="meta.volume">Descuentos por volumen</span>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section id="muestras">
+      <h2 style="margin:0 0 12px;font-size:28px" data-i18n="sections.samples">Muestras rápidas</h2>
+      <p class="muted" data-i18n="samples.desc">Inserta aquí tus clips o links cuando estén listos. Por ahora, usa estos espacios como marcadores.</p>
+      <div class="grid-3" style="margin-top:12px">
+        <div class="card">
+          <h3 data-i18n="samples.podcast">Podcast → Español</h3>
+          <audio controls style="width:100%">
+            <source src="" type="audio/mpeg">
+          </audio>
+        </div>
+        <div class="card">
+          <h3 data-i18n="samples.video">Voiceover comercial</h3>
+          <audio controls style="width:100%">
+            <source src="" type="audio/mpeg">
+          </audio>
+        </div>
+        <div class="card">
+          <h3 data-i18n="samples.announce">Diálogo lip‑sync</h3>
+          <audio controls style="width:100%">
+            <source src="" type="audio/mpeg">
+          </audio>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section id="contacto">
+      <h2 style="margin:0 0 12px;font-size:28px" data-i18n="sections.contact">Cuéntanos de tu proyecto</h2>
+      <p class="muted" data-i18n="contact.desc">Responde 5 preguntas y te regresamos una propuesta en breve.</p>
+      <form class="card" onsubmit="event.preventDefault(); alert(translations[state.lang].contact.thanks);">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+          <label><span data-i18n="contact.name">Nombre</span><br><input required placeholder="Tu nombre" style="width:100%;padding:12px;border:1px solid var(--line);border-radius:12px;background:#fff"></label>
+          <label><span data-i18n="contact.email">Email</span><br><input required type="email" placeholder="tucorreo@dominio.com" style="width:100%;padding:12px;border:1px solid var(--line);border-radius:12px;background:#fff"></label>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px">
+          <label><span data-i18n="contact.type">Tipo de proyecto</span><br>
+            <select style="width:100%;padding:12px;border:1px solid var(--line);border-radius:12px;background:#fff">
+              <option>Podcast</option>
+              <option>Contenido YouTube</option>
+              <option>Curso / e‑learning</option>
+              <option>Comercial / Marca</option>
+              <option>Series / Largometrajes</option>
+              <option>Otro</option>
+            </select>
+          </label>
+          <label><span data-i18n="contact.length">Duración aproximada</span><br><input placeholder="p. ej. 12 minutos" style="width:100%;padding:12px;border:1px solid var(--line);border-radius:12px;background:#fff"></label>
+        </div>
+        <label style="display:block;margin-top:12px"><span data-i18n="contact.link">Enlace de referencia (opcional)</span>
+          <input placeholder="URL al video o brief" style="width:100%;padding:12px;border:1px solid var(--line);border-radius:12px;background:#fff">
+        </label>
+        <label style="display:block;margin-top:12px"><span data-i18n="contact.notes">Notas</span>
+          <textarea rows="4" placeholder="Tono, público, idiomas, deadline…" style="width:100%;padding:12px;border:1px solid var(--line);border-radius:12px;background:#fff"></textarea>
+        </label>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:14px">
+          <button class="btn primary" type="submit" data-i18n="cta.quote">Solicitar cotización</button>
+          <a class="btn ghost" href="#demo" data-i18n="cta.demo">Pide una demo</a>
+        </div>
+        <p class="muted" style="font-size:12px;margin-top:10px" data-i18n="contact.privacy">Al enviar aceptas nuestro uso responsable de IA y el resguardo de tu información para cotización. Entregables: archivos de audio WAV.</p>
+      </form>
+    </section>
+
+    <div class="divider"></div>
+
+    <section id="faq">
+      <h2 style="margin:0 0 12px;font-size:28px" data-i18n="sections.faq">Preguntas frecuentes</h2>
+      <details class="card"><summary><strong data-i18n="faq.q1">¿Usan solo IA o también voces humanas?</strong></summary>
+        <p class="muted" data-i18n="faq.a1">Combinamos IA con dirección y control humano. Para ciertos proyectos también gestionamos voces humanas tradicionales.</p>
+      </details>
+      <details class="card" style="margin-top:10px"><summary><strong data-i18n="faq.q2">¿Pueden clonar mi voz?</strong></summary>
+        <p class="muted" data-i18n="faq.a2">Sí, si el cliente es propietario de su propia voz y provee consentimiento y muestras adecuadas. Entregamos acuerdos de uso específicos.</p>
+      </details>
+      <details class="card" style="margin-top:10px"><summary><strong data-i18n="faq.q3">¿Qué hay sobre sincronía labial?</strong></summary>
+        <p class="muted" data-i18n="faq.a3">Ofrecemos adaptación para lip‑sync y herramientas de alineación; incluimos revisiones para ajustes finos.</p>
+      </details>
+    </section>
+
+    <div class="divider"></div>
+  </main>
+
+  <footer>
+    <div class="container" style="display:grid;gap:8px">
+      <div style="display:flex;align-items:center;gap:10px">
+        <img src="IxDubb Logo Black Square.png" alt="IxDubb" style="width:30px;height:30px">
+        <strong>IxDubb</strong>
+      </div>
+      <div class="muted" data-i18n="footer.loc">Ciudad de México • Operación remota</div>
+      <div class="muted">© <span id="y"></span> IxDubb.</div>
+    </div>
+  </footer>
+
+  <script>
+    // i18n
+    const translations = {
+      es: {
+        nav:{services:'Servicios',process:'Flujo',samples:'Muestras',contact:'Contacto'},
+        cta:{demo:'Pide una demo',quote:'Cotiza tu proyecto',samples:'Ver muestras'},
+        hero:{kicker:'Doblaje + Localización',title:'Voces que conectan.\nVelocidad de IA.\nDirección humana.',lede:'Estudio boutique para <strong>productoras, marcas y creadores</strong> que buscan doblaje al español (y otros idiomas) con <strong>lip‑sync cuidado</strong>, <strong>tono natural</strong> y <strong>entregas ágiles</strong>.'},
+        badges:{sync:'Lip‑sync preciso',creative:'Control creativo',qc:'QC humano',audio:'Entregables WAV'},
+        sections:{services:'Servicios',process:'Cómo trabajamos',samples:'Muestras rápidas',contact:'Cuéntanos de tu proyecto',faq:'Preguntas frecuentes'},
+        services:{desc:'Paquetes flexibles para productoras, marcas y creadores. Elige solo lo que necesitas.',
+          adapt:{h:'Traducción y adaptación',p:'Localización al español neutro/latam con intención, referencias y <em>style‑guide</em>. Ajuste para lip‑sync cuando el proyecto lo requiera.'},
+          ai:{h:'Doblaje con IA dirigida',p:'Voces neurales con dirección humana para dicción natural, emociones y consistencia de personaje. Opciones de clonación con permisos.'},
+          qc:{h:'QC humano + mezcla',p:'Edición fina, limpieza, niveles broadcast y control de calidad por especialistas en audio.'},
+          subs:{h:'Subtitulaje y accesibilidad',p:'.srt / .vtt, closed captions y descripciones de audio según estándar.'},
+          rights:{h:'Gestión de derechos',p:'Permisos de uso de voz y likeness, releases y documentación para usos comerciales y UGC.'},
+          delivery:{h:'Entrega y formatos',p:'WAV 48 kHz / 24‑bit, stems y AAF/OMF cuando aplique. <strong>No entregamos video</strong>.'}
+        },
+        process:{'1h':'Brief y muestras','1p':'Recibimos material, tono y referencias. Enviamos voice tests cortos.',
+                 '2h':'Adaptación','2p':'Traducción creativa con guía de pronunciación y ajustes de sync.',
+                 '3h':'Grabación IA + dirección','3p':'Iteramos tomas con dirección humana y marcadores de sincronía.',
+                 '4h':'Edición, mezcla y QC','4p':'Limpieza, mezcla, loudness y control de calidad final.',
+                 '5h':'Entrega','5p':'WAV finales + stems y materiales por pista según alcance.',
+                 '6h':'Opcionales','6p':'Subtítulos, multilenguaje y documentación de derechos.'},
+        meta:{billing:'Facturación en MXN o USD',nda:'NDAs disponibles',volume:'Descuentos por volumen'},
+        samples:{desc:'Inserta aquí tus clips o links cuando estén listos. Por ahora, usa estos espacios como marcadores.',podcast:'Podcast → Español',video:'Voiceover comercial',announce:'Diálogo lip‑sync'},
+        contact:{desc:'Responde 5 preguntas y te regresamos una propuesta en breve.',name:'Nombre',email:'Email',type:'Tipo de proyecto',length:'Duración aproximada',link:'Enlace de referencia (opcional)',notes:'Notas',thanks:'¡Gracias! Te contactaremos muy pronto.',privacy:'Al enviar aceptas nuestro uso responsable de IA y el resguardo de tu información para cotización. Entregables: WAV audio.'},
+        footer:{loc:'Ciudad de México • Operación remota'}
+      },
+      en: {
+        nav:{services:'Services',process:'Process',samples:'Samples',contact:'Contact'},
+        cta:{demo:'Book a demo',quote:'Get a quote',samples:'Hear samples'},
+        hero:{kicker:'Dubbing + Localization',title:'Voices that connect.\nAI speed.\nHuman direction.',lede:'Boutique studio for <strong>production companies, brands and creators</strong> seeking dubbing into Spanish (and other languages) with <strong>careful lip‑sync</strong>, <strong>natural tone</strong> and <strong>fast turnarounds</strong>.'},
+        badges:{sync:'Accurate lip‑sync',creative:'Creative control',qc:'Human QC',audio:'WAV deliverables'},
+        sections:{services:'Services',process:'How we work',samples:'Quick samples',contact:'Tell us about your project',faq:'FAQ'},
+        services:{desc:'Flexible packages for production companies, brands and creators. Pick only what you need.',
+          adapt:{h:'Translation & Adaptation',p:'Localization into neutral/LatAm Spanish with intent, references and style‑guide. Lip‑sync adjustments when required.'},
+          ai:{h:'AI‑directed Dubbing',p:'Neural voices with human direction for natural diction, emotion and character consistency. Opt‑in voice cloning with permissions.'},
+          qc:{h:'Human QC & Mix',p:'Fine editing, cleaning, broadcast loudness and quality control by audio specialists.'},
+          subs:{h:'Subtitles & Accessibility',p:'Subtitles (.srt/.vtt), closed captions and audio description as needed.'},
+          rights:{h:'Rights Management',p:'Voice/likeness permissions, releases and documentation for commercial and UGC uses.'},
+          delivery:{h:'Delivery & Formats',p:'WAV 48 kHz / 24‑bit, stems and AAF/OMF when applicable. <strong>We do not deliver video</strong>.'}
+        },
+        process:{'1h':'Brief & Voice tests','1p':'We receive assets, tone and references. We send short voice tests.',
+                 '2h':'Adaptation','2p':'Creative translation with pronunciation guide and sync tweaks.',
+                 '3h':'Recording (AI) + Direction','3p':'We iterate takes with human direction and sync markers.',
+                 '4h':'Editing, Mix & QC','4p':'Cleaning, mixing, loudness and final QC.',
+                 '5h':'Delivery','5p':'Final WAVs + stems and per‑track materials as scoped.',
+                 '6h':'Optional','6p':'Subtitles, multilanguage and rights documentation.'},
+        meta:{billing:'Billing in MXN or USD',nda:'NDAs available',volume:'Volume discounts'},
+        samples:{desc:'Drop in your clips/links when ready. For now these are placeholders.',podcast:'Podcast → Spanish',video:'Commercial voiceover',announce:'Lip‑sync dialogue'},
+        contact:{desc:'Answer 5 questions and we’ll send a proposal shortly.',name:'Name',email:'Email',type:'Project type',length:'Approx. length',link:'Reference link (optional)',notes:'Notes',thanks:'Thanks! We will reach out shortly.',privacy:'By submitting you accept our responsible AI use and info handling for quoting. Deliverables: WAV audio files.'},
+        footer:{loc:'Mexico City • Remote operations'}
+      }
+    };
+
+    const state = { lang: document.documentElement.lang || 'es' };
+    const el = (sel)=>Array.from(document.querySelectorAll(sel));
+    function applyI18n(){
+      document.documentElement.lang = state.lang;
+      el('[data-i18n]').forEach(n=>{
+        const path = n.getAttribute('data-i18n').split('.');
+        let cur = translations[state.lang];
+        path.forEach(k=>cur = cur?.[k]);
+        if(typeof cur === 'string') n.innerHTML = cur;
+      });
+      document.getElementById('langToggle').textContent = state.lang==='es'?'EN':'ES';
+    }
+    document.getElementById('langToggle').addEventListener('click',()=>{ 
+      state.lang = state.lang==='es'?'en':'es'; 
+      localStorage.setItem('ixdubb_lang', state.lang);
+      applyI18n(); 
+    });
+    // recordar preferencia
+    const saved = localStorage.getItem('ixdubb_lang');
+    if(saved){ state.lang = saved; }
+    document.getElementById('y').textContent = new Date().getFullYear();
+    applyI18n();
+  </script>
+</body>
+</html>
